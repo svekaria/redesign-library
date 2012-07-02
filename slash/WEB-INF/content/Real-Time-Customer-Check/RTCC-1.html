@@ -1,0 +1,695 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Orphan-1col-content-sidebar</title>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	
+	<link href="../../../../common/redesign-css/templates.css" rel="stylesheet" type="text/css" />
+	<link href="../../../../common/redesign-css/buttons.css" rel="stylesheet" type="text/css" />
+	<link href="../../../../common/redesign-css/typography.css" rel="stylesheet" type="text/css" />
+	<link href="../../../../common/redesign-css/panels.css" rel="stylesheet" type="text/css" />
+	<link href="../../../../common/redesign-css/ui-components.css" rel="stylesheet" type="text/css" />
+	<link href="../../../../common/redesign-css/forms.css" rel="stylesheet" type="text/css" />
+	<link href="../../../../common/redesign-css/breadcrumb.css" rel="stylesheet" type="text/css" />
+    
+    <!-- page level css -->
+    <link href="../../../../eshop/content/redesign-css/checkout.css" rel="stylesheet" type="text/css" />
+
+	
+	<!--[if gte IE 6]>  
+		<style type="text/css">@import '../../../../common/redesign-css/ie6.css';</style>  
+	<![endif]--> 
+	
+	<!--[if gte IE 7]>  
+		<style type="text/css">@import '../../../../common/redesign-css/ie7.css';</style>  
+	<![endif]--> 
+	
+	   <script src="../../../../common/redesign-js/lib/mootools-1.2.3-core-yc.js" type="text/javascript"></script>
+
+		<script src="../../../../common/redesign-js/lib/mootools-1.2.3.1-more.js" type="text/javascript"></script>
+		<script src="../../../../common/redesign-js/addons/mootools.ui-components.js" type="text/javascript"></script>
+		<script src="../../../../common/redesign-js/general_functions.js" type="text/javascript"></script>
+		<script src="../../../../common/redesign-js/init/init.tips.js" type="text/javascript"></script>
+
+
+	
+	
+</head>
+
+<body id="orphan-1col-content-sidebar-nonav">
+<div id="rd-wrapper">
+    <div id="container">
+        <div id="leftwrap">
+            
+			
+			 <div id="rd-content">
+				
+				
+				<div  class="span-2col">
+
+					 <div class="dotted-border-bottom">
+						 <ol class="breadcrumb">	
+								<li class="breadcrumb-active">
+									<span class="step-num">1</span>
+					
+									<span class="step-desc">Basket</span>
+								</li>
+							
+								<li>
+									<span class="step-num">2</span>
+									<span class="step-desc">Checkout</span>
+								</li>
+							
+								<li >
+					
+									<span class="step-num">3</span>
+									<span class="step-desc">Order complete</span>
+								</li>
+					
+						</ol>	
+						<div class="back-btn float-right" style="margin: 15px 0pt;">
+							<a class="rdbtn btn-white-small-highlight" href="javascript:history.go(-1)"><span class="btn-corner-br"><span class="btn-corner-bl"><span class="btn-corner-tr"><span class="btn-corner-tl">
+								<span class="padding">Back</span>
+							</span></span></span></span>
+							</a>
+						</div>
+		
+						<div class="clear"></div>			    
+					</div>
+					
+					<form autocomplete="off" onsubmit="return submitForm(this, true, false);" class="form" action="/shop/your-choice/checkout/" method="POST" id="checkout_personal_details_form" name="PersonalDetailsForm">
+					
+						<fieldset class="solid">
+
+							<a id="personal_id"></a>
+							<h4>Step 1 of 4: Your personal details</h4>
+							<p>We just need a few details for our records (home address etc) and a quick credit check.<br /><br />Fields marked with a <span class="highlight-petrol">*</span> are mandatory</p>
+	
+						<!-- MIGRATING / EXISTING CUSTOMER BEGIN -->
+
+						<div class="form-collection">
+
+							<div class="row one-column">
+								<div><label id="hasTMobilePhoneArrow">
+									<span class="highlight-petrol">*</span> Do you already have a T-Mobile phone?			
+									</label>
+									<input type="radio" name="hasTMobilePhone" value="true" onclick="drawMigrationDetails(true);" class="undecor width-auto"><label class="width-auto">Yes</label>
+									<input type="radio" name="hasTMobilePhone" value="false" onclick="drawMigrationDetails(false);drawKeepNumber(false);" class="undecor width-auto"><label class="width-auto">No</label>
+								</div>
+								<div id="hasTMobilePhoneError" class="message-note">
+									
+								</div>
+								<br />
+							</div>
+							<div class="clear"></div>	
+						</div>
+						
+						
+						<!-- MIGRATING / EXISTING CUSTOMER END -->
+						<div class="form-collection">
+							<div class="row one-column">
+								<div><label id="titleIdArrow">
+									<span class="highlight-petrol">*</span> Title
+									</label>
+									<select name="titleId"><option value="">Please select</option>
+											<option value="0">Mr</option>
+											<option value="1">Mrs</option>
+											<option value="2">Miss</option>
+											<option value="3">Ms</option>
+											<option value="4">Dr</option></select>
+								</div>
+								<div id="titleIdError" class="message-note">			
+								</div>
+								<br />
+							</div>
+							
+							<div class="row one-column">
+								<div><label id="firstNameArrow">
+									<span class="highlight-petrol">*</span> First name
+									</label>
+									<input type="text" name="firstName" maxlength="14" value="">
+								</div>
+								<div id="firstNameError" class="message-note">
+									
+								</div>
+								<br />
+							</div>
+							
+							<div class="row one-column">
+								<div><label id="initialArrow">
+									Middle initials
+									</label>
+									<input type="text" name="initial" maxlength="3" value="" style="width:20px;">
+								</div>
+								<div id="initialError" class="message-note">
+									
+								</div>
+								<br />
+							</div>
+							
+							<div class="row one-column">
+								<div><label id="lastNameArrow">
+									<span class="highlight-petrol">*</span> Last name
+									</label>
+									<input type="text" name="lastName" maxlength="60" value="">
+								</div>
+								<div id="lastNameError" class="message-note">
+									
+								</div>
+								<br />
+							</div>
+							
+							<div class="row one-column">
+								<div> <label id="birthDayArrow">
+									<span class="highlight-petrol">*</span> Birth date
+									</label>
+									<select name="birthDay" class="width-50"><option value="">dd</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="31">31</option></select>
+									
+									<select name="birthMonth" onchange="updateDayRange(this.form['birthDay'], this, this.form['birthYear']);" class="width-50"><option value="">mmm</option>
+											<option value="1">Jan</option>
+											<option value="2">Feb</option>
+											<option value="3">Mar</option>
+											<option value="12">Dec</option></select>
+							
+									<select name="birthYear" onchange="updateDayRange(this.form['birthDay'], this.form['birthMonth'], this);" class="width-50"><option value="">yyyy</option>
+											<option value="1991">1991</option>
+											<option value="1990">1990</option>
+											<option value="1989">1989</option>
+											<option value="1988">1988</option>
+											<option value="1987">1987</option>
+											<option value="1986">1986</option>
+											<option value="1985">1985</option>
+											<option value="1901">1901</option></select>
+								</div>
+								<div id="birthDayError" class="message-note">
+									
+								</div>
+								<br />
+							</div>
+							
+							<div class="row one-column">
+								<div> <label id="emailArrow">
+									<span class="highlight-petrol">*</span> Email
+									</label>
+									<input type="text" name="email" maxlength="50" value="">
+								</div>
+								<div id="emailError" class="message-note">
+									
+								</div>
+								<br />
+							</div>
+							
+							<div class="row one-column">
+								<div><label id="contactPhoneArrow">
+									<span class="highlight-petrol">*</span> Daytime phone
+									</label>
+									<input type="text" name="contactPhone" maxlength="15" value="">
+									<div id="contactPhoneError" class="message-note">
+										
+									</div>
+								<br /><span class="field-note">We'll only call you on this number if we need to ask you about your order.</span>								
+								</div>
+							</div>
+							
+							<div class="row one-column">
+								<div> <label id="homePhoneArrow">
+									Evening phone
+									</label>
+									<input type="text" name="homePhone" maxlength="15" value="">
+								</div>
+								<div id="homePhoneError" class="message-note">
+									
+								</div>
+								<br /> 
+							</div>
+							<div class="clear"></div>
+						</div><!-- end form colllection -->
+						
+						<h5>Home address</h5>
+						<p>For your security, we can only deliver to your home address. This needs to match the address of the card you'll be using.</p>
+						
+						
+						
+						<div class="form-collection"> <!-- Start Home address -->
+					    <div class="row one-column" id="currentAddress-searchBuildingNameNumberId">
+							<div>
+								<label id="currentAddress-searchBuildingNameNumberArrow" >
+									House number or name <br /><span class="label-note">(eg 28 or Building 5)</span>
+								</label>
+								<div><input type="text" name="currentAddress.searchBuildingNameNumber" maxlength="60" value="" onchange="currentAddressList.searchParamsChanged();"></div>
+							</div>
+							<div id="currentAddress-searchBuildingNameNumberError" class="message-note"></div>					
+					        <br />
+						</div>
+						
+						<div class="clear"></div>
+						
+						<div  id="currentAddress-searchPostcodeId">
+							<div class="row one-column">
+								<div>
+									<label id="currentAddress-searchPostcodeArrow" >
+										<span class="highlight-petrol">*</span> Postcode<br /><span class="label-note">(eg AL10 9BW)</span>
+									</label>
+									<input type="text" name="currentAddress.searchPostcode" maxlength="8" size="8" value="" onchange="currentAddressList.searchParamsChanged();" style="width: 70px;">
+									
+									<div id="currentAddress-searchPostcodeError" class="message-note"></div>
+								</div>
+								<br />
+							</div>
+		
+						<div class="btn-arrow btnshop" id="currentPostcodeKnownAddressSearchBtn" style="margin:8px 0 0 256px;clear:both;">
+							<a href="javascript: currentAddressSearch(false);" class="rdbtn btn-white-small"><span class="btn-corner-br"><span class="btn-corner-bl"><span class="btn-corner-tr"><span class="btn-corner-tl">
+								<span class="padding">Find address</span>
+								</span></span></span></span></a>
+								<br />
+								<br /><a href="javascript: currentAddressList.switchPostcodeUnknown();" class="primary-link">Help me find my postcode</a>	
+							</div>
+						</div>
+
+		
+						<div class="row one-column" style="clear:both;">
+							<div> <label id="monthsAtAddressArrow"><span class="highlight-petrol">*</span> Date moved to current address
+								</label>
+								<select name="monthsAtAddress" onchange="drawPreviousAddressOverseas(isPreviousAddressRequired(this.value, this.form.yearsAtAddress.value));" class="width-50"><option value="">mmm</option>
+										<option value="1">Jan</option>
+										<option value="2">Feb</option>
+										<option value="3">Mar</option>
+										<option value="12">Dec</option></select>
+								<select name="yearsAtAddress" onchange="drawPreviousAddressOverseas(isPreviousAddressRequired(this.form.monthsAtAddress.value, this.value));" class="width-50"><option value="">yyyy</option>			
+										<option value="2009">2009</option>
+										<option value="2008">2008</option>
+										<option value="2007">2007</option>
+										<option value="2006">2006</option>
+										<option value="2005">2005</option>
+										<option value="2004">2004</option>
+										<option value="1930">1930</option>
+										<option value="1929">1929</option></select>
+							</div>
+							<div id="monthsAtAddressError" class="message-note">
+								
+							</div>
+							<br />
+						</div>
+		
+						<div class="row one-column">
+							<div> <label id="residentialStatusIdArrow">Residential status</label>
+								<select name="residentialStatusId"><option value="0" selected="selected">Not entered / Other</option>	
+										<option value="1">Rent</option>
+										<option value="2">Own</option>
+										<option value="3">Live with parents</option></select>
+							</div>
+							<div id="residentialStatusIdError" class="message-note">
+								
+							</div>
+							<br />
+						</div>
+
+
+						<div class="clear"></div>
+					</div><!-- End Home address -->
+					
+					
+					<h5>Security questions</h5>
+					<p>Nearly there with the personal details - just a couple more questions to help with a security check</p>
+					
+					
+						<div class="form-collection">
+	
+							<div class="row one-column">
+								<div><label id="employmentStatusIdArrow"><span class="highlight-petrol">*</span> Employment status</label>
+									<select name="employmentStatusId" onchange="updateEmplymentDateMessage(this.value);"><option value="">Please select</option>
+											<option value="0">Office-based</option>
+											<option value="1">Non office-based</option>
+											<option value="2">Retired</option>
+											<option value="3">Student</option>
+											<option value="4">Other</option></select>
+								</div>
+								<div id="employmentStatusIdError" class="message-note">				
+								</div>
+								<br />
+							</div>
+						
+							<div class="row one-column">
+								<div> <label id="monthsWithEmployerArrow"><span class="highlight-petrol">*</span> Date started at current employment</label>
+									<select name="monthsWithEmployer" class="width-50"><option value="">mmm</option>					
+											<option value="1">Jan</option>
+											<option value="2">Feb</option>
+											<option value="3">Mar</option>
+											<option value="4">Apr</option>
+											<option value="5">May</option>
+											<option value="6">Jun</option>
+											<option value="12">Dec</option></select>
+									<select name="yearsWithEmployer" class="width-50"><option value="">yyyy</option>
+											<option value="2009">2009</option>
+											<option value="2008">2008</option>
+											<option value="2007">2007</option>
+											<option value="2006">2006</option>
+											<option value="2005">2005</option>
+											<option value="2004">2004</option>
+											<option value="2003">2003</option>
+											<option value="2002">2002</option>
+											<option value="1929">1929</option></select>
+								</div>
+								<div id="monthsWithEmployerError" class="message-note">
+								</div>
+								<br />
+							</div>
+					
+							<div class="row one-column">
+								<div> <label id="monthsWithBankArrow"><span class="highlight-petrol">*</span> Date joined bank</label>
+									<select name="monthsWithBank" class="width-50"><option value="">mmm</option>
+											<option value="1">Jan</option>
+											<option value="2">Feb</option>
+											<option value="3">Mar</option>
+											<option value="4">Apr</option>
+											<option value="12">Dec</option></select>
+									<select name="yearsWithBank" class="width-50"><option value="">yyyy</option>
+											<option value="2009">2009</option>
+											<option value="2008">2008</option>
+											<option value="2007">2007</option>
+											<option value="2006">2006</option>
+											<option value="2005">2005</option>
+											<option value="2004">2004</option>
+											<option value="1929">1929</option></select>
+								</div>
+								<div id="monthsWithBankError" class="message-note">				
+								</div>
+								<br />
+							</div>
+							<div class="clear"></div>
+						</div>
+					
+					<div class="float-left">
+						<p class="margin-top10">Click continue to save these details (you can still edit them later) and move on to the next step</p>
+					</div>
+					<div class="float-right button-container">
+						<span class="rdbtn btn-magenta btn-input">
+							<span class="btn-corner-br"><span class="btn-corner-bl"><span class="btn-corner-tr"><span class="btn-corner-tl">
+									<input type="submit" value="Continue to Step 2" class="padding">
+							</span></span></span></span>
+						</span>
+					</div>
+					</fieldset>
+					<div class="clear"></div>
+					
+					
+					
+					
+
+					<fieldset class="solid">	
+					<h4>Step 3 of 4: Payment details</h4><a id="payment_id"></a>
+					<p>To verify your card and billing address we'll charge &pound;2 to your card and then refund it straight away. This important check helps protect you and makes sure your order goes through smoothly.</p>
+					<div class="form-collection">					
+						<div class="row">
+							<div>
+								<label id="cardTypeIdArrow">Type of card<em>*</em></label>
+								<select name="cardTypeId" onchange="onChangeCardType(this.form);" disabled="disabled"><option value="">Please select</option>
+					         	<option value="0">Visa</option>
+					            <option value="1">Mastercard</option>
+					            <option value="2">Switch/Maestro</option>
+					            <option value="3">American Express</option>
+					            <option value="4">Diners Club</option></select>
+							</div>		
+							<div id="cardTypeIdError" class="message-note"></div>
+							<br />
+						</div>
+					
+						<div class="row">
+							<div>
+								<label id="cardNumberArrow">Card number<em>*</em></label>					
+								<input type="text" name="cardNumber" size="19" value="" onfocus="emptyValue(this);" disabled="disabled" />
+							</div>
+							<div id="cardNumberError" class="message-note"></div>
+								<br /><span class="field-note">This is usually the long number across the middle of your card</span>	
+						</div>
+						
+						<div class="row">
+							<div>
+								<label id="nameOnCardArrow">Name on card<em>*</em></label>
+								<input type="text" name="nameOnCard" maxlength="77" size="30" value="" disabled="disabled" />
+							</div>
+							<div id="nameOnCardError" class="message-note"></div>
+							<br />
+						</div>
+					
+						<div class="row">
+								<div>
+									<label id="securityCodeArrow">Security code<em>*</em></label>					
+									<input type="text" name="securityCode" maxlength="4" size="4" value="" onfocus="emptyValue(this);" disabled="disabled" class="field-medium" />
+								</div>
+								<div id="securityCodeError" class="message-note"></div>
+								<br />
+						</div>
+							<div class="clear"></div>
+						
+								
+						<div id="amexMessageNote" class="row" style="display: none;">
+							<span class="field-note">Amex users this is the 4 digit number on the Front of your card.</span><br/>
+							<span class="field-note"><a href="Javscript:;" onclick="return popUp('/eshop/content/personal/checkout/card_amex.jpg', 250, 160);">Click here if you need help</a>.</span>
+						</div>
+						<div id="allMessageNote" class="row" style="display: none;">
+							<span class="field-note">
+							This is the 3 digit number on the back of your card.</span><br/>
+							<span class="field-note"><a href="Javscript:;" onclick="return popUp('/eshop/content/personal/checkout/card_amex_front.jpg', 250, 160);">Click here if you need help</a>.
+							</span>
+							</p>
+						</div>
+						<div class="row" id="issueNumberId" style="display: none;">
+							<div>
+								<label id="issueNumberArrow">Issue number<em>**</em></label>
+					
+								<input type="text" name="issueNumber" maxlength="2" size="2" value="" disabled="disabled" class="field-short" />
+								<span class="note">(If shown)</span>
+							</div>
+							<div id="issueNumberError" class="message-note"></div>
+							<br />
+						</div>
+					
+
+					
+						<div class="row" id="cardStartDateId" style="display: none;">
+							<div>
+								<label id="cardStartMonthArrow">Valid from<em id="startDateStar"></em></label>					
+								<input type="text" name="cardStartMonth" maxlength="2" size="2" value="" disabled="disabled" class="width-50" />
+								<label style="width:10px;">/</label>
+								<input type="text" name="cardStartYear" maxlength="2" size="2" value="" disabled="disabled" class="width-50" />
+								<span class="note">(If shown)</span>
+							</div>
+							<div id="cardStartMonthError" class="message-note"></div>
+							<div id="cardStartYearError" class="message-note"></div>
+							<!-- <div class="clear"></div> -->
+						</div>
+						
+						<div class="row">
+							<div style="width:400px;">
+								<label id="expiryMonthArrow">Expiry date<em>*</em></label>
+								<input type="text" name="expiryMonth" maxlength="2" size="2" value="" disabled="disabled" class="width-50" />
+								<input type="text" name="expiryYear" maxlength="2" size="2" value="" disabled="disabled" class="width-50" />
+								
+							</div>
+							<div id="expiryMonthError" class="message-note"></div>
+							<div id="expiryYearError" class="message-note"></div>
+						</div>
+						<div class="clear"></div>
+					</div>
+
+						<div class="clear"></div>
+						
+						<div class="float-right button-container">		
+							<span class="rdbtn btn-disabled btn-input">
+								<span class="btn-corner-br"><span class="btn-corner-bl"><span class="btn-corner-tr"><span class="btn-corner-tl">
+									<input type="submit" value="Continue to Step 4" disabled="disabled" class="padding" />
+								</span></span></span></span>
+							</span>
+						</div>
+						
+						<div class="clear"></div>
+						
+					</fieldset>
+					
+					
+					<div class="clear"></div>
+					<fieldset class="solid">
+						<h4>Step 4 of 4: Terms and conditions</h4><a id="terms_and_conditions_id"></a>
+						<div id="acceptTermsAndConditionsError" class="warning hide"></div>
+						<p>To protect our customers' card payments T-Mobile uses the following schemes: MasterCard and Visa 3D secure, Verified by Visa and MasterCard SecureCode. </p>
+						<p>You might be prompted to sign in or enrol your credit or debit card to your relevant scheme before you complete your purchase. This will take a very short time and helps us to keep you safe from fraud.</p>
+						
+						<div class="form-collection">
+							<div class="row">
+								<div>
+									<label>Please read and accept our terms and conditions:</label>
+									<input type="checkbox" name="acceptTermsAndConditions" value="on" disabled="disabled" id="acceptTermsAndConditions" style="font-size:0.9em" class="undecor width-auto" />
+								</div>
+								<p class="example">I accept the terms and conditions.</p>
+								<br />
+							</div>
+						</div>
+						
+							
+						<p><strong>Please check all details, including your address, then click 'Confirm purchase'.</strong></p>
+						
+						<div class="clear"></div>
+						<div class="float-right button-container">
+						<p class="highlight float-left" style="margin:3px 10px 0 0;"><strong>Once you click the button, your order will be submitted and payment taken</strong></p>
+							<div class="float-left">
+									<span class="rdbtn btn-disabled btn-input">
+										<span class="btn-corner-br"><span class="btn-corner-bl"><span class="btn-corner-tr"><span class="btn-corner-tl">
+											<input type="submit" value="Confirm purchase" disabled="disabled" id="confirmPurchaseBtn" class="padding" />
+										</span></span></span></span>
+									</span>
+							</div>					
+						</div>					
+					</fieldset>
+					
+
+					</form>				
+
+			
+
+    
+			<div class="clear"></div>
+		
+		
+			
+			</div> <!-- end rd-content-inner -->
+			
+        </div>
+       <!-- /end rd-content-->
+		 
+
+            
+            <div class="clear"></div>
+        </div><!-- /leftwrap -->
+		  
+		  
+		  <div id="rightbar">
+				<div class="free-delivery-popup">
+					<a href="/shop/popup/free-delivery-online/" onclick="return popUp('/shop/popup/free-delivery-online/',650,400);" title="FREE delivery info"><img width="181" height="74" src="../../../../eshop/content/common/img/free_delivery_online.gif" alt="FREE delivery"/></a>
+				</div>
+		  </div>
+		 
+		  <div class="clear"></div>
+		  
+		  
+    	<div id="rd-header">
+        	<div id="utility-bar">
+				<div id="customer-type-tabs">
+					<ul>
+						<li class="current"><a href="/">Personal</a></li>
+						<li><a href="/business/">Business</a></li>
+					</ul>
+				</div>
+				<div id="search">
+                	<ul id="top-utility" class="float-left">
+                    	<li class="first"><a href="/store-finder/">Store locator</a></li>
+                        <li><a href="/services/help-and-support/suppport-contact-us/">Contact us</a></li>
+                    </ul>
+				</div><!-- /search -->
+				<div class="clear"></div>
+			</div><!-- /utility-bar -->
+			<div id="logo-bar">
+				<div id="logo-bg">
+					<a href="/"><img src="../../../../common/redesign-img/templates/tmobile_logo.gif" class="logo" width="299" height="49" alt="T-Mobile logo" /></a>
+				</div>
+				<div class="clear"></div>
+				<div id="primary-navigation">
+                    <h2 class="offscreen">Main site navigation here</h2>
+					<ul id="nav">
+						<li class="current"><a href="/">Home</a></li>
+						<li><a href="/shop/mobile-phone-shop/">Shop</a></li>
+						<li><a href="/services/">Our services</a></li>
+						<li><a href="http://support.t-mobile.co.uk/help-and-support/">Help &amp; support</a></li>
+						<li><a href="/service/your-account/private/home/">My T-Mobile</a></li>
+					</ul>
+				</div>
+                <div id="mtm-btn" class="float-right">
+                    <div class="action float-left register-button">
+                        <a class="rdbtn btn-black" href="/service/your-account/signup/">
+                            <span class="btn-corner-br"><span class="btn-corner-bl"><span class="btn-corner-tr"><span class="btn-corner-tl">
+                                <span class="padding">Register</span>
+                            </span></span></span></span>
+                        </a>
+                    </div>
+                    <div class="action float-left">
+                        <a class="rdbtn btn-black" href="/service/your-account/mtm-user-login-dispatch/">
+                            <span class="btn-corner-br"><span class="btn-corner-bl"><span class="btn-corner-tr"><span class="btn-corner-tl">
+                                <span class="padding">Login</span>
+                            </span></span></span></span>
+                        </a>
+                    </div>
+                    <div class="clear"></div>
+                
+                </div><!-- /mtm-btrn -->
+				<div class="clear"></div>
+			</div><!-- /logo-bar -->
+        </div><!-- /header -->
+    </div><!-- / container -->
+    
+    <div class="clear"></div>
+		<div id="rd-footer">
+        	<div id="footer-utility">
+				<ul class="top-line">
+					<li class="first"><a href="/services/about-t-mobile/">About T-Mobile</a></li>
+					<li><a href="/services/careers/">Careers</a></li>
+					<li><a href="/services/link-to-us/">Affiliates</a></li>
+					<li><a href="/store-finder/">Store finder</a></li>
+					<li><a href="/services/help-and-support/suppport-contact-us/">Contact us</a></li>
+					<li><a href="/sitemap/">Sitemap</a></li>
+					<li><a href="/services/disabled-customers/">Disabled customers</a></li>
+				</ul>
+				<ul class="shop-links-top-line">
+                <li class="first"><a href="/shop/mobile-phone-shop/">Mobile shop</a></li>
+                <li><a href="/shop/mobile-phones/phones/">Mobile phones</a></li>
+                <li><a href="/shop/mobile-phones/phones/pay-monthly/all/all/">Pay monthly phones</a></li>            
+                <li><a href="/shop/mobile-phones/phones/pay-as-you-go/all/all/">Pay as you go phones</a></li>
+                <li><a href="/shop/mobile-phones/whats-hot/">Latest phones</a></li>            
+                <li><a href="/shop/pay-monthly/deals/">Pay monthly deals</a></li>            
+                <li><a href="/shop/pay-as-you-go/deals/">Pay as you go deals</a></li>
+            </ul>
+				<ul class="shop-links-bottom-line">
+                <li class="first"><a href="/shop/mobile-broadband/">Mobile broadband</a></li>
+                <li><a href="/shop/sim-only/">SIM only</a></li>            
+                <li><a href="/shop/free-pay-as-you-go-sim-cards/">Free SIM cards</a></li>                                               
+                <li><a href="/shop/mobile-phones/upgrade/">Upgrades</a></li>         
+                <li><a href="/shop/mobile-phones/phone-insurance/">Phone insurance</a></li>                        
+                <li><a onclick="return popUp('/shop/popup/free-next-day-delivery/', 650, 400)" href="/shop/popup/free-next-day-delivery/">Free mobile delivery</a></li>
+            </ul>
+				<ul class="bottom-line">
+                <li class="first"><a target="_self" href="/services/privacy/">Privacy</a></li>
+                <li><a target="_self" href="/services/terms-and-conditions/">Terms & conditions</a></li>
+                <li><a target="_self" href="/services/copyright-statement/">&copy; 2009 T-Mobile (UK) Ltd</a></li>
+            </ul>
+			</div>
+    <div id="international-countries">
+        <div id="countries">
+            <ul id="international">
+                <li class="usa"><a href="http://www.t-mobile.com/">T-Mobile (USA)</a></li>
+                <li class="germany"><a href="http://www.t-mobile.de/">T-Mobile (Germany)</a></li>
+                <li class="czech"><a href="http://www.t-mobile.cz/">T-Mobile (Czech)</a></li>
+                <li class="austria"><a href="http://www.t-mobile.at/">T-Mobile (Austria)</a></li>						
+            </ul>
+                <form name="countries" action="">
+                    <select size="1" name="sites" class="footer-select">
+                        <option selected="selected">More international sites</option>
+                        <option value="http://www.t-mobile.hr/">Croatia</option>
+                        <option value="http://www.t-mobile.nl/">Netherlands</option>
+                        <option value="http://www.t-mobile.hu/">Hungary</option>
+                        <option value="http://www.t-mobile.sk/">Slovak Republic</option>
+                        <option value="http://www.t-mobile.com.mk/">Macedonia</option>
+                        <option value="http://www.t-mobile.me/">Montenegro</option>
+                    </select>
+                </form>
+                <input class="footer-small-btn" name="go"	type="button" value="Go" onclick="openURL()" />
+        </div><!-- /countries -->
+        <div class="clear"></div>
+    </div><!-- /international-countries -->
+        </div><!-- /footer -->
+</div><!-- /wrapper -->
+</body>
+</html> 
