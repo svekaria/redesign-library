@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* common this a test svekaria
+=======
+/* common button styles
+>>>>>>> adding comment
 ---------------------------------------------- */
 .rdbtn { position:relative; float:left; top:4px; left:3px; margin:0 10px 3px 0; font-size:1.2em; text-decoration:none !important; border-style:none; }
 li .rdbtn { font-size:1em; }
